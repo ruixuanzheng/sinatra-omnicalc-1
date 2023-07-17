@@ -1,0 +1,38 @@
+<h1>Payment Results</h1>
+
+
+<dl>
+  <dt>
+    APR
+  </dt>
+  <dd>
+    <%= params.fetch("apr") %>
+  </dd>
+
+  <dt>
+    N
+  </dt>
+  <dd>
+    <%= params.fetch("n") %>
+  </dd>
+
+  <dt>
+    PV
+  </dt>
+  <dd>
+    <%= params.fetch("pv") %>
+  </dd>
+
+
+  <dt>
+    Payment
+  </dt>
+  <dd>
+    <%= params.fetch("apr").to_f * params.fetch("pv").to_f / (1 - 1/(1 + params.fetch("apr").to_f) ** (params.fetch("n").to_f))%>
+  </dd>
+</dl>
+
+
+<a href="/payment/new">
+  Calculate another payment
+</a>
