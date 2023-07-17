@@ -21,7 +21,7 @@
     PV
   </dt>
   <dd>
-    <%= sprintf("$%.2f", @pv) %>
+    <%= @pv.to_fs(:currency, {:precision => 2}) %>
   </dd>
 
 
@@ -29,7 +29,7 @@
     Payment
   </dt>
   <dd>
-    <%= sprintf("$%.2f", @payment)%>
+    <%= @payment.to_fs(:currency, {:precision => 2})%>
   </dd>
 </dl>
 
