@@ -28,6 +28,10 @@ get("/payment/new") do
 end
 
 get("/payment/results") do
+  @apr = params.fetch("apr").to_f
+  @n = params.fetch("n").to_f
+  @pv = params.fetch("pv").to_f
+  @payment = (@apr * @pv) / (1 - 1 / ((1 + @apr) ** (@apr)))
   erb(:payment_results)
 end
 

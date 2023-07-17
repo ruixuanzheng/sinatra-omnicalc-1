@@ -7,21 +7,21 @@
     APR
   </dt>
   <dd>
-    <%= params.fetch("apr") %>
+    <%= @apr %>
   </dd>
 
   <dt>
     N
   </dt>
   <dd>
-    <%= params.fetch("n").to_f.round(4) %>
+    <%= @n %>
   </dd>
 
   <dt>
     PV
   </dt>
   <dd>
-    <%= params.fetch("pv") %>
+    <%= @pv %>
   </dd>
 
 
@@ -29,7 +29,7 @@
     Payment
   </dt>
   <dd>
-    <%= Money.new(params.fetch("apr").to_f * params.fetch("pv").to_f / (1 - 1/(1 + params.fetch("apr").to_f) ** (params.fetch("n").to_f)), "USD")%>
+    <%= @payment%>
   </dd>
 </dl>
 
