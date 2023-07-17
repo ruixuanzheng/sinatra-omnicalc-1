@@ -28,7 +28,7 @@
     Payment
   </dt>
   <dd>
-    <%= params.fetch("apr").to_f * params.fetch("pv").to_f / (1 - 1/(1 + params.fetch("apr").to_f) ** (params.fetch("n").to_f))%>
+    <%= (params.fetch("apr").to_f * params.fetch("pv").to_f / (1 - 1/(1 + params.fetch("apr").to_f) ** (params.fetch("n").to_f))).to_s_currency%>
   </dd>
 </dl>
 
