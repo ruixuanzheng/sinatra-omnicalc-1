@@ -7,7 +7,7 @@
     APR
   </dt>
   <dd>
-    <%= @apr %>
+    <%= sprintf("%.2f%%", @apr * 100) %>
   </dd>
 
   <dt>
@@ -21,7 +21,7 @@
     PV
   </dt>
   <dd>
-    <%= @pv %>
+    <%= sprintf("$%.2f", @pv) %>
   </dd>
 
 
@@ -29,7 +29,7 @@
     Payment
   </dt>
   <dd>
-    <%= @payment%>
+    <%= sprintf("$%.2f", @payment)%>
   </dd>
 </dl>
 

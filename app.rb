@@ -31,7 +31,7 @@ get("/payment/results") do
   @apr = params.fetch("apr").to_f
   @n = params.fetch("n").to_f
   @pv = params.fetch("pv").to_f
-  @payment = (@apr * @pv) / (1 - 1 / ((1 + @apr) ** (@apr)))
+  @payment = (@apr / 12 * @pv) / (1 - 1 / ((1 + @apr / 12) ** (@n * 12)))
   erb(:payment_results)
 end
 
