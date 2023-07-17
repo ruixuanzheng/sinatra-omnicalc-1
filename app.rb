@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
+require 'active_support/all'
+require "money"
 
 get("/square/new") do
   erb(:new_square_calc)
